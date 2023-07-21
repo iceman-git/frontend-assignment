@@ -1,10 +1,14 @@
-import React from 'react'
+import React from 'react';
+import ProductDetailEntry from './ProductDetailEntry';
+import { QueryClient, QueryClientProvider } from 'react-query';
+
+const queryClient = new QueryClient();
 
 const ProductDetail = () => {
   return (
-    <div>
-      
-    </div>
+    <QueryClientProvider client={queryClient}>
+        <ProductDetailEntry/ >
+    </QueryClientProvider>
   )
 }
 

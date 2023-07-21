@@ -1,10 +1,14 @@
 import React from 'react';
+import HomeEntry from './HomeEntry';
+import { QueryClient, QueryClientProvider } from 'react-query';
+
+const queryClient = new QueryClient();
 
 const Home = () => {
   return (
-    <div>
-      <h1> We are in Home Page</h1>
-    </div>
+    <QueryClientProvider client={queryClient}>
+        <HomeEntry/ >
+    </QueryClientProvider>
   )
 }
 
