@@ -4,7 +4,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 
 const queryClient = new QueryClient();
 
-const Home = () => {
+const HomePage = () => {
   return (
     <QueryClientProvider client={queryClient}>
         <HomeEntry/ >
@@ -12,4 +12,4 @@ const Home = () => {
   )
 }
 
-export default Home;
+export default HomePage;

@@ -24,8 +24,13 @@ const Home = () => {
 
   return (
     <div>
-      <h1> Welcome to OnlineStore</h1>
-      <div>
+      <div className= "hero-section">
+        <div>
+          <h1 className= "text-grad">Welcome to OnlineStore</h1>
+          <h5>Discover the Best Deals on Top Brands</h5>
+        </div>
+      </div>
+      <div className='main-container'>
         {
         products.map(product => <EachProduct key= {product.id} product={product} />)
         }
