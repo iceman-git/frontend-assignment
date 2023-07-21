@@ -1,7 +1,16 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 const Header = () => {
+
+    const [searchItem, setSearchItem]= useState('');
+    const navigate= useNavigate();
+
+    const handleSearch=(e)=>{
+        e.preventDefault();
+        navigate(`/search?query=${encodeURIComponent(searchItem)}`);
+    }
 
     const activeStyle = {
         textDecoration: "underline",
@@ -22,11 +31,9 @@ const Header = () => {
                             <NavLink className="nav-link custom-link" style= {({isActive})=> isActive? activeStyle: null} to="cart">Cart</NavLink>
                         </li>
                     </ul>
-                    <form className="d-flex" role="search">
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button className="btn btn-outline-success" type="submit">
-                            <NavLink className='nav-link'to="search">Search</NavLink>
-                        </button>
+                    <form className="d-flex" role="search" onSubmit={handleSearch}>
+                        <input className="form-control me-2" type="search" placeholder="Search for Product" value={searchItem} onChange={e=>setSearchItem(e.target.value)} aria-label="Search" />
+                        <button className="btn btn-outline-success" type="submit">search</button>
                     </form>
                 </div>
             </div>
