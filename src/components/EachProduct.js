@@ -13,6 +13,7 @@ const EachProduct = ({product}) => {
 
   const absoluteClass= "cart-icon";
   const conditionalClass= existInCart? "active": null;
+  const isDisabled= Boolean(conditionalClass);
 
   return (
     <div className="card container-item" style={{width: "18rem"}}>
@@ -24,9 +25,9 @@ const EachProduct = ({product}) => {
             <p className="card-text">{product.category}</p>
             <h5 className="card-text price">${product.price}</h5>
             <p>Rating : {product.rating.rate}</p>
-            <div>
-              <BsCartCheckFill className={`${absoluteClass} ${conditionalClass}`} onClick = {() => dispatch(addItemToCart(product))}/>
-            </div>
+            <button disabled={isDisabled} className="cart-button">
+              <BsCartCheckFill className={`${absoluteClass} ${conditionalClass}`} onClick = {() => dispatch(addItemToCart({...product, quantity: 1}))}/>
+            </button>
         </div>
     </div>
   )

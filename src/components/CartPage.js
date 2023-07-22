@@ -2,6 +2,7 @@ import React from 'react';
 import { selectAllItems } from '../cartSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeItemFromCart } from '../cartSlice';
+import { Link } from 'react-router-dom';
 
 const CartPage = () => {
   const dispatch = useDispatch();
@@ -15,7 +16,9 @@ const CartPage = () => {
       <div className='main-container-cart'>
         {cartItems.map(item => 
           <div className="card container-item" style={{width: "18rem"}}>
-            <img src= {item.image} className="card-img-top image" alt= {item.title} />
+            <Link to= {`/product/${item.id}`}>
+              <img src= {item.image} className="card-img-top image" alt= {item.title} />
+            </Link>
             <div className="card-body">
                 <h6 className="card-title">{item.title}</h6>
                 <p className="card-text">{item.category}</p>

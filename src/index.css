@@ -132,3 +132,14 @@
 .active{
     color: green;
 }
+
+.search{
+    margin: 8em 2em 2em 2em;
+    font-size: 20px;
+}
+
+.cart-button{
+    border: none;
+    outline: none;
+    background:white;
+}
