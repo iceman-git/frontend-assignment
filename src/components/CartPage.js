@@ -10,7 +10,7 @@ const CartPage = () => {
   const cartItems = useSelector(selectAllItems);
 
   if(cartItems.length===0){
-    return <h1 className="main-container-cart">No items to show</h1>
+    return <h1 className="no-item-message">No item added!</h1>
   }
 
   return (
