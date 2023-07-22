@@ -29,7 +29,7 @@ const Search = () => {
   ))
 
   if(filteredProducts.length===0){
-    return <h1 className="main-container-cart">No items found for the search</h1>
+    return <h1 className="no-item-message">No item found for the search</h1>
   }
 
   return (

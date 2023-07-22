@@ -3,6 +3,7 @@ import { selectAllItems } from '../cartSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeItemFromCart } from '../cartSlice';
 import { Link } from 'react-router-dom';
+import CartTotal from './CartTotal';
 
 const CartPage = () => {
   const dispatch = useDispatch();
@@ -13,6 +14,10 @@ const CartPage = () => {
   }
 
   return (
+    <>
+      <div className= "cart-section">
+        <h1 className= "text-grad-cart">#your cart</h1>
+      </div>
       <div className='main-container-cart'>
         {cartItems.map(item => 
           <div className="card container-item" style={{width: "18rem"}}>
@@ -28,7 +33,10 @@ const CartPage = () => {
             </div>
             <button type="button" className="btn btn-primary" onClick = {() => dispatch(removeItemFromCart(item.id))}>Remove from cart</button>
           </div>)}
+          
       </div>
+      <CartTotal cartItems={cartItems}/>
+    </>
   )
 }
 
