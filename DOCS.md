@@ -32,3 +32,6 @@ Before running the project, make sure you have the following dependencies instal
 - react-query
 - react-icons
 
+## Live demo URL
+https://frontend-assignment-ten-chi.vercel.app/
+
